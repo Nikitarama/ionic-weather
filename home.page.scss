@@ -5,6 +5,7 @@ $size4: 2em;
 $size5: 1.5em;
 $size6: 1em;
 $size7: 0.8em;
+$size8: 0.6em;
 
 ion-content {
   --ion-font-family: 'Hepta Slab', sans-serif;
@@ -79,6 +80,13 @@ ion-grid {
   display: block;
 }
 
+.weather-sm {
+  display: block;
+  font-size: $size7;
+  font-weight: 200;
+  margin-bottom: 1em;
+}
+
 .hi-sm {
   display: block;
 }
@@ -87,3 +95,31 @@ ion-grid {
   display: block;
 }
 
+.today {
+  display: block;
+  text-align: center;
+  margin-top: 6em;
+}
+
+.head {
+  display: block;
+  font-size: $size4;
+}
+
+.bottom {
+  display: block;
+  margin-bottom: 3em;
+  font-size: $size6;
+  font-weight: bold;
+}
+
+.time {
+  display: block;
+  font-size: $size7;
+  font-weight: 200;
+}
+
+.temp-sm {
+  display: block;
+  font-size: $size7;
+}

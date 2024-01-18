@@ -66,17 +66,25 @@
         <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[24].weather[0].icon }}@2x.png"></ion-col>
         <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[32].weather[0].icon }}@2x.png"></ion-col>
         <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[39].weather[0].icon }}@2x.png"></ion-col>
-        <!-- <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[38].weather[0].icon }}@2x.png"></ion-col> -->
-        <!-- <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[6].weather[0].icon }}@2x.png"></ion-col> -->
+       </ion-row>
+
+       <!--Weather Description-->
+       <ion-row>
+        <ion-col class="weather-sm">{{ res.list[0].weather[0].description }}</ion-col>
+        <ion-col class="weather-sm">{{ res.list[1].weather[0].description }}</ion-col>
+        <ion-col class="weather-sm">{{ res.list[2].weather[0].description }}</ion-col>
+        <ion-col class="weather-sm">{{ res.list[3].weather[0].description }}</ion-col>
+        <ion-col class="weather-sm">{{ res.list[4].weather[0].description }}</ion-col>
+        
       </ion-row>
 
       <!--High Temps-->
       <ion-row>
-        <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[15].main.temp }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[23].main.temp }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[31].main.temp }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[39].main.temp }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[8].main.temp_max }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[15].main.temp_max }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[23].main.temp_max }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[31].main.temp_max }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[39].main.temp_max }}°C</ion-col>
         <!-- <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col> -->
         <!-- <ion-col class="hi-sm">25°C</ion-col> -->
       </ion-row>
@@ -91,6 +99,44 @@
         <!-- <ion-col class="lo-sm">16°C</ion-col> -->
         <!-- <ion-col class="lo-sm">15°C</ion-col> -->
       </ion-row>
+
+    </ion-grid>
+
+    <div class="today">
+      <span class="head">Today's Temperatures</span> 
+      <span class="bottom">[For the next 12hrs]</span> 
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="time">{{ res.list[0].dt_txt }}</ion-col>
+        <ion-col class="time">{{ res.list[1].dt_txt }}</ion-col>
+        <ion-col class="time">{{ res.list[2].dt_txt }}</ion-col>
+        <ion-col class="time">{{ res.list[3].dt_txt }}</ion-col>
+        <ion-col class="time">{{ res.list[4].dt_txt }}</ion-col>
+        
+      </ion-row>
+
+      <ion-row>
+        <ion-row>
+          <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[1].weather[0].icon }}@2x.png"></ion-col>
+          <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[2].weather[0].icon }}@2x.png"></ion-col>
+          <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[3].weather[0].icon }}@2x.png"></ion-col>
+          <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[4].weather[0].icon }}@2x.png"></ion-col>
+          <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[5].weather[0].icon }}@2x.png"></ion-col>
+         </ion-row>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="temp-sm">{{ res.list[1].main.temp }}°C</ion-col>
+        <ion-col class="temp-sm">{{ res.list[2].main.temp }}°C</ion-col>
+        <ion-col class="temp-sm">{{ res.list[3].main.temp }}°C</ion-col>
+        <ion-col class="temp-sm">{{ res.list[4].main.temp }}°C</ion-col>
+        <ion-col class="temp-sm">{{ res.list[5].main.temp }}°C</ion-col>
+       
+      </ion-row>
+
+
 
     </ion-grid>
 </ion-content>
