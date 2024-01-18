@@ -19,8 +19,9 @@
     <div class="main">
       <span class="city">{{ res.city.name }}</span>
       <span class="country">[ {{ res.city.country }} ]</span> 
-      <span class="date">{{ res.list[0].dt | day }}</span>
+      <span class="date">{{ res.list[0].dt | day }}</span>  
       
+      <br><br>
       <div class="icon">
         <span class="description">{{ res.list[0].weather[0].description }}</span>
         <span class="temperature">{{ res.list[0].main.temp }}°C</span>
@@ -60,34 +61,34 @@
 
       <!--Cloud Icons-->
       <ion-row>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[0].weather[0].icon }}@2x.png"></ion-col>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[1].weather[0].icon }}@2x.png"></ion-col>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[15].weather[0].icon }}@2x.png"></ion-col>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[23].weather[0].icon }}@2x.png"></ion-col>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[31].weather[0].icon }}@2x.png"></ion-col>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[38].weather[0].icon }}@2x.png"></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[8].weather[0].icon }}@2x.png"></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[16].weather[0].icon }}@2x.png"></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[24].weather[0].icon }}@2x.png"></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[32].weather[0].icon }}@2x.png"></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[39].weather[0].icon }}@2x.png"></ion-col>
+        <!-- <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[38].weather[0].icon }}@2x.png"></ion-col> -->
         <!-- <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[6].weather[0].icon }}@2x.png"></ion-col> -->
       </ion-row>
 
       <!--High Temps-->
       <ion-row>
         <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[15].main.temp }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[23].main.temp }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[31].main.temp }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[39].main.temp }}°C</ion-col>
+        <!-- <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col> -->
         <!-- <ion-col class="hi-sm">25°C</ion-col> -->
       </ion-row>
 
       <!--Low Temps-->
       <ion-row>
-        <ion-col class="lo-sm">{{ res.list[1].main.temp_min }}°C</ion-col>
-        <ion-col class="lo-sm">15°C</ion-col>
-        <ion-col class="lo-sm">17°C</ion-col>
-        <ion-col class="lo-sm">13°C</ion-col>
-        <ion-col class="lo-sm">10°C</ion-col>
-        <ion-col class="lo-sm">16°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[4].main.temp_min }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[12].main.temp_min }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[20].main.temp_min }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[28].main.temp_min }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[36].main.temp_min }}°C</ion-col>
+        <!-- <ion-col class="lo-sm">16°C</ion-col> -->
         <!-- <ion-col class="lo-sm">15°C</ion-col> -->
       </ion-row>
 

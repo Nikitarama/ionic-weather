@@ -4,9 +4,10 @@ $size3: 3em;
 $size4: 2em;
 $size5: 1.5em;
 $size6: 1em;
+$size7: 0.8em;
 
 ion-content {
-  --ion-font-family: 'Zilla Slab', sans-serif;
+  --ion-font-family: 'Hepta Slab', sans-serif;
 }
 
 ion-header {
@@ -15,7 +16,7 @@ ion-header {
 }
 
 ion-content{
-  --background: linear-gradient(#2980B9, #6DD5FA);
+  --background: linear-gradient(#1e5d86, #6DD5FA);
   --ion-text-color: #222;
 }
 
@@ -39,13 +40,13 @@ ion-content{
 
 .description {
   display: block;
-  font-size: $size5;
+  font-size: $size6;
   font-weight: bold;
 }
 
 .temperature {
   display: block;
-  font-size: $size6;
+  font-size: $size7;
   padding: 0px;
   margin: 0px;
   font-weight: 100;
@@ -59,7 +60,6 @@ ion-content{
 
 ion-grid {
   text-align: center;
-  // position: fixed;
   bottom: 0%;
   margin: 0 auto;
 }
