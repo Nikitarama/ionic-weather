@@ -1,7 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Weather App
+      <span class="material-symbols-outlined">
+        partly_cloudy_day
+        </span> Weather Assistant
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,12 +21,12 @@
     <div class="main">
       <span class="city">{{ res.city.name }}</span>
       <span class="country">[ {{ res.city.country }} ]</span> 
-      <span class="date">{{ res.list[0].dt | day }}</span>  
-      
-      <br><br>
+      <span class="date">{{ res.list[0].dt | dateFormatting }}</span> 
+      <br>
+
       <div class="icon">
         <span class="description">{{ res.list[0].weather[0].description }}</span>
-        <span class="temperature">{{ res.list[0].main.temp }}°C</span>
+        <span class="temperature">{{ res.list[0].main.temp | number:'1.0-0'}}°C</span>
         <img src="http://openweathermap.org/img/wn/{{ res.list[0].weather[0].icon }}@2x.png" alt="">
         
         <!-- <svg xmlns="http://www.w3.org/2000/svg" height="5em" viewBox="0 0 640 512">! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<style>svg{fill:#87a6db}</style><path d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z"/></svg> -->
@@ -39,63 +41,50 @@
 
         <!--Days of the Week-->
         
-        <ion-col class="day">{{ res.list[7].dt | day }}</ion-col>
-        <ion-col class="day">{{ res.list[15].dt | day }}</ion-col>
-        <ion-col class="day">{{ res.list[23].dt | day }}</ion-col>
-        <ion-col class="day">{{ res.list[31].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.list[8].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.list[16].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.list[24].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.list[32].dt | day }}</ion-col>
         <ion-col class="day">{{ res.list[39].dt | day }}</ion-col>
         <!-- <ion-col class="day">{{ res.list[46].dt | day }}</ion-col> -->
 
       </ion-row>
 
-      <!--Precipitation-->
-      <!-- <ion-row>
-        <ion-col class="precipitation">{{ res.list[1].temp.day }}</ion-col>
-        <ion-col class="precipitation">{{ res.list[11].weather.main }}</ion-col>
-        <ion-col class="precipitation">{{ res.list[18].weather.main }}</ion-col>
-        <ion-col class="precipitation">{{ res.list[26].weather.main }}</ion-col>
-        <ion-col class="precipitation">{{ res.list[33].weather.main }}</ion-col>
-        <ion-col class="precipitation">{{ res.list[38].weather.main }}</ion-col>
-        <ion-col class="precipitation">-</ion-col>
-      </ion-row> -->
-
       <!--Cloud Icons-->
       <ion-row>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[8].weather[0].icon }}@2x.png"></ion-col>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[16].weather[0].icon }}@2x.png"></ion-col>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[24].weather[0].icon }}@2x.png"></ion-col>
-        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[32].weather[0].icon }}@2x.png"></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[7].weather[0].icon }}@2x.png"></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[15].weather[0].icon }}@2x.png"></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[23].weather[0].icon }}@2x.png"></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[31].weather[0].icon }}@2x.png"></ion-col>
         <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.list[39].weather[0].icon }}@2x.png"></ion-col>
        </ion-row>
 
        <!--Weather Description-->
        <ion-row>
-        <ion-col class="weather-sm">{{ res.list[0].weather[0].description }}</ion-col>
-        <ion-col class="weather-sm">{{ res.list[1].weather[0].description }}</ion-col>
-        <ion-col class="weather-sm">{{ res.list[2].weather[0].description }}</ion-col>
-        <ion-col class="weather-sm">{{ res.list[3].weather[0].description }}</ion-col>
-        <ion-col class="weather-sm">{{ res.list[4].weather[0].description }}</ion-col>
-        
+        <ion-col class="weather-sm">{{ res.list[7].weather[0].description }}</ion-col>
+        <ion-col class="weather-sm">{{ res.list[15].weather[0].description }}</ion-col>
+        <ion-col class="weather-sm">{{ res.list[23].weather[0].description }}</ion-col>
+        <ion-col class="weather-sm">{{ res.list[31].weather[0].description }}</ion-col>
+        <ion-col class="weather-sm">{{ res.list[39].weather[0].description }}</ion-col>
       </ion-row>
 
       <!--High Temps-->
       <ion-row>
-        <ion-col class="hi-sm">{{ res.list[8].main.temp_max }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[15].main.temp_max }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[23].main.temp_max }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[31].main.temp_max }}°C</ion-col>
-        <ion-col class="hi-sm">{{ res.list[39].main.temp_max }}°C</ion-col>
-        <!-- <ion-col class="hi-sm">{{ res.list[8].main.temp }}°C</ion-col> -->
-        <!-- <ion-col class="hi-sm">25°C</ion-col> -->
+        <ion-col class="hi-sm">{{ res.list[7].main.temp_max | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[15].main.temp_max | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[23].main.temp_max | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[31].main.temp_max | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.list[39].main.temp_max | number:'1.0-0'}}°C</ion-col>
+       
       </ion-row>
 
       <!--Low Temps-->
       <ion-row>
-        <ion-col class="lo-sm">{{ res.list[4].main.temp_min }}°C</ion-col>
-        <ion-col class="lo-sm">{{ res.list[12].main.temp_min }}°C</ion-col>
-        <ion-col class="lo-sm">{{ res.list[20].main.temp_min }}°C</ion-col>
-        <ion-col class="lo-sm">{{ res.list[28].main.temp_min }}°C</ion-col>
-        <ion-col class="lo-sm">{{ res.list[36].main.temp_min }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[4].main.temp_min | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[12].main.temp_min | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[20].main.temp_min | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[28].main.temp_min | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.list[36].main.temp_min | number:'1.0-0'}}°C</ion-col>
         <!-- <ion-col class="lo-sm">16°C</ion-col> -->
         <!-- <ion-col class="lo-sm">15°C</ion-col> -->
       </ion-row>
@@ -109,34 +98,123 @@
 
     <ion-grid>
       <ion-row>
-        <ion-col class="time">{{ res.list[0].dt_txt }}</ion-col>
-        <ion-col class="time">{{ res.list[1].dt_txt }}</ion-col>
-        <ion-col class="time">{{ res.list[2].dt_txt }}</ion-col>
-        <ion-col class="time">{{ res.list[3].dt_txt }}</ion-col>
-        <ion-col class="time">{{ res.list[4].dt_txt }}</ion-col>
+        <ion-col class="time">{{ res.list[0].dt | dateFormatting }}</ion-col>
+        <ion-col class="time">{{ res.list[1].dt | dateFormatting }}</ion-col>
+        <ion-col class="time">{{ res.list[2].dt | dateFormatting }}</ion-col>
+        <ion-col class="time">{{ res.list[3].dt | dateFormatting }}</ion-col>
+        <ion-col class="time">{{ res.list[4].dt | dateFormatting }}</ion-col>
         
       </ion-row>
 
-      <ion-row>
+      
         <ion-row>
           <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[1].weather[0].icon }}@2x.png"></ion-col>
           <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[2].weather[0].icon }}@2x.png"></ion-col>
           <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[3].weather[0].icon }}@2x.png"></ion-col>
           <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[4].weather[0].icon }}@2x.png"></ion-col>
           <ion-col class="icon-xs"><img src="http://openweathermap.org/img/wn/{{ res.list[5].weather[0].icon }}@2x.png"></ion-col>
-         </ion-row>
+        </ion-row>
+      
+
+      <ion-row>
+        <ion-col class="temp-sm">{{ res.list[1].main.temp | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="temp-sm">{{ res.list[2].main.temp | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="temp-sm">{{ res.list[3].main.temp | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="temp-sm">{{ res.list[4].main.temp | number:'1.0-0'}}°C</ion-col>
+        <ion-col class="temp-sm">{{ res.list[5].main.temp | number:'1.0-0'}}°C</ion-col>
+       
+      </ion-row>
+    </ion-grid>
+
+  
+    <div class="wind">
+      <span class="head">Wind Speed</span> 
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="icon-sl"><span class="material-symbols-outlined">air</span></ion-col>
+        <ion-col class="icon-sl"><span class="material-symbols-outlined">air</span></ion-col>
+        <ion-col class="icon-sl"><span class="material-symbols-outlined">air</span></ion-col>
+        <ion-col class="icon-sl"><span class="material-symbols-outlined">air</span></ion-col>
+        <ion-col class="icon-sl"><span class="material-symbols-outlined">air</span></ion-col>
       </ion-row>
 
       <ion-row>
-        <ion-col class="temp-sm">{{ res.list[1].main.temp }}°C</ion-col>
-        <ion-col class="temp-sm">{{ res.list[2].main.temp }}°C</ion-col>
-        <ion-col class="temp-sm">{{ res.list[3].main.temp }}°C</ion-col>
-        <ion-col class="temp-sm">{{ res.list[4].main.temp }}°C</ion-col>
-        <ion-col class="temp-sm">{{ res.list[5].main.temp }}°C</ion-col>
-       
+        <ion-col class="speed">{{ res.list[0].wind.speed }}km/h</ion-col>
+        <ion-col class="speed">{{ res.list[1].wind.speed }}km/h</ion-col>
+        <ion-col class="speed">{{ res.list[2].wind.speed }}km/h</ion-col>
+        <ion-col class="speed">{{ res.list[3].wind.speed }}km/h</ion-col>
+        <ion-col class="speed">{{ res.list[4].wind.speed }}km/h</ion-col>
+        
       </ion-row>
 
 
-
     </ion-grid>
-</ion-content>
+
+    <div class="cards">
+      
+       <ion-grid>
+        <ion-row>
+          <ion-card class="card1">
+            <ion-card-header>
+              <ion-card-title>Humidity</ion-card-title>
+              <ion-card-subtitle><span class="material-symbols-outlined">
+                humidity_mid
+                </span></ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+              {{ res.list[1].main.humidity }}%
+            </ion-card-content>
+          </ion-card>
+    
+          <ion-card class="card2">
+            <ion-card-header>
+              <ion-card-title>Sea Level</ion-card-title>
+              <ion-card-subtitle><span class="material-symbols-outlined">
+                sailing
+                </span></ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+              {{ res.list[1].main.sea_level }}m
+            </ion-card-content>
+          </ion-card>
+        </ion-row>
+
+        <ion-row>
+          <ion-card class="card3">
+            <ion-card-header>
+              <ion-card-title>Air Pressure</ion-card-title>
+              <ion-card-subtitle><span class="material-symbols-outlined">
+                airware
+                </span></ion-card-subtitle>
+            </ion-card-header>
+   
+            <ion-card-content>
+              {{ res.list[1].main.pressure }}hPa
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="card4">
+            <ion-card-header>
+              <ion-card-title>Ground Level</ion-card-title>
+              <ion-card-subtitle><span class="material-symbols-outlined">
+                landscape
+                </span></ion-card-subtitle>
+            </ion-card-header>
+   
+            <ion-card-content>
+              {{ res.list[1].main.grnd_level }}m
+            </ion-card-content>
+          </ion-card>
+      </ion-row> 
+    </ion-grid>
+    </div>
+
+    <div class="calender">
+      <ion-datetime></ion-datetime>
+    </div>
+
+  </ion-content> 
