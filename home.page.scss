@@ -17,12 +17,9 @@ ion-header {
 }
 
 ion-content{
-  --background: linear-gradient(#5aa8db, #fae56d);
+  --background: linear-gradient(#5aa8db, #fabb6d);
   --ion-text-color: #222;
-  // --background: url("https://i.postimg.cc/WzQ92XqH/skywallpaper.jpg");
-  // --background-size: cover;
-  // --background-repeat: no-repeat;
-  // width:max-content;
+  
 }
 
 .main {
@@ -169,7 +166,7 @@ ion-grid {
 ion-card {
   --background: #000000b0;
   --color: #9efff0;
-  width: 20em;
+  width: 18em;
   text-align:left;
 }
 
