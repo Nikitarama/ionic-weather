@@ -16,6 +16,10 @@ ion-header {
   text-align: center;
 }
 
+ion-toolbar {
+  --background: #000000;
+}
+
 ion-content{
   --background: linear-gradient(#5aa8db, #fabb6d);
   --ion-text-color: #222;
@@ -166,34 +170,20 @@ ion-grid {
 ion-card {
   --background: #000000b0;
   --color: #9efff0;
-  width: 18em;
+  width: 11.2em;
   text-align:left;
 }
 
 ion-card-title {
   --color: #52ffe4;
+  font-size: $size5;
+  font-weight: 300;
 }
 
 ion-card-subtitle {
   font-size: $size5;
   --color: #d1fff8;
+  font-weight: 300;
 }
 
-ion-datetime {
-  margin-top: 3em;
-  --background: hsla(0, 0%, 100%, 0.795);
-  --background-rgb: 255, 241, 242;
-  position: relative;
-  right: 80%;
-  left: 20%;
-  border-radius: 16px;
-  box-shadow: rgba(var(--ion-color-rose-rgb), 0.3) 0px 10px 15px -3px;
-}
 
-.time-body {
-  color: white;
-}
-
-.day-of-week {
-  color: white;
-}
